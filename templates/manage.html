@@ -1,0 +1,77 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+	<div class='manage_content_page'>
+	    <form  action="" method="post" role="form">
+	        {{ AMF.csrf }}
+	        <div class="form-group">
+	          <style> 
+				  textarea {
+				  width: 100%;
+				  height: 200px;
+				  padding: 12px 20px;
+				  box-sizing: border-box;
+				  border: 2px solid #ccc;
+				  border-radius: 4px;
+				  background-color: #f8f8f8;
+				  font-size: 16px;
+				  resize: none;
+				  }
+			  </style>
+	          <p>
+	          <input type="text" class="form-control" id="login" name="login" placeholder="login">
+	          <input type="text" class="form-control" id="password" name="password" placeholder="password">
+	          </p>
+	        </div>
+
+			<div>
+				<br>
+				<br>
+				<h4>Projects</h4>
+				{% if project_titles_links %}
+					{% for link, title, i in project_titles_links %}
+						<p>
+						<input type="submit" name="update_proj_{{i}}" value="update" class="1">
+						<input type="submit" name="delete_proj_{{i}}" value="delete" class="1">
+						<a href={{link}}>{{title}}</a>
+						</p>
+					{% endfor%}
+				{% endif %}
+			</div>
+
+			<div>
+				<br>
+				<br>
+				<h4>Articles</h4>
+				{% if art_titles_links %}
+					{% for link, title, i in art_titles_links %}
+						<p>
+						<input type="submit" name="update_art_{{i}}" value="update" class="1">
+						<input type="submit" name="delete_art_{{i}}" value="delete" class="1">
+						<a href={{link}}>{{title}}</a>
+						</p>
+					{% endfor%}
+				{% endif %}
+			</div>
+
+		</form>
+
+		<div>
+	      {% with messages = get_flashed_messages(with_categories=true) %}
+	          {% if messages %}
+	              <br>
+	              <p> </p>
+	              {% for message in messages %}
+	                  <div class="alert alert-info">
+	                  <strong>Done: </strong> {{ message[1] }}
+	                  </div>
+	              {% endfor %}
+	          {% endif %}
+	      {% endwith %}
+		</div>
+
+	</div class='manage_content_page'>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+
+	<div class="main_menu">
+				<br>
+				<br>
+				<br>
+				</p>
+	</div>
+
+
+	<div class="posts">
+		<p><b>Newest projects</b></p>
+		{% if project_intros %}
+			
+			{% for project_intro in project_intros %}
+			
+			<div class="post">
+				{{project_intro|safe}} 
+				<br>
+			</div>
+
+			{% endfor %}
+		{% endif %}
+		<br>
+        <p><a href="/portfolio">See portfolio</a></p>
+		<br>
+		<br>
+	</div>
+
+	<div class="posts">
+		<p><b>Newest articles</b></p>
+		{% if posts_intros %}
+			
+			{% for post_intro in posts_intros %}
+			
+			<div class="post">
+				{{post_intro|safe}} 
+				<br>
+			</div>
+
+			{% endfor %}
+		{% endif %}
+		<br>
+        <p><a href="/blog">See articles</a></p>
+		<br>
+		<br>
+	</div>
+
+{% endblock %}
+

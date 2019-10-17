@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="article_page">
+	{% if project_html %}
+		<div class="article">
+			{{project_html|safe}} 
+		</div>
+	{% endif %}
+	</div>
+
+{% endblock %}

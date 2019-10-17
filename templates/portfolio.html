@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+    <div class="posts_page">
+        <br>
+        <p>Projects page. TBD.</p> 
+        <br>
+        <br>
+    </div>
+
+
+    <div class="posts">
+    {% if page_nav %}
+        <div class="post">
+            <br>
+            {{page_nav|safe}} 
+            <br>
+            <br>
+            <br>
+        </div>
+    {% endif %}
+    </div>
+    <div class="posts">
+        {% if project_intros %}
+            
+            {% for project_intro in project_intros %}
+            
+            <div class="post">
+                <br>
+                {{project_intro|safe}} 
+                <br>
+                <br>
+            </div>
+
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+    <div class="posts">
+    {% if page_nav %}
+        <div class="post">
+            <br>
+            <br>
+            <br>
+            {{page_nav|safe}} 
+            <br>
+        </div>
+    {% endif %}
+    </div>
+
+
+
+
+
+
+    
+	<div class="main_menu">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h4>Projekty:</h4>
+		<p><b>1. Reader</b></p>
+		<p>.</p>
+                <p><a href="">[app]</a>
+		<a href="">[code]</a>
+		</p>
+                <br>
+                <p><b>2. </b></p>
+                <p>Opis....Program computing and collecting propable chess figures combinations on chessboard of N fields and defined set of figures$
+                <p><a href="https://twitter.com/PsychologyaiP">[bot]</a>
+                <a href="https://github.com/Hiurge/reader-parts-">[code]</a>
+                </p>
+                <br>
+                <p><b>3. Some analysis</b></p>
+                <p>Mostly for practicing.</p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0001-tweets-analysis-use-of-adjectives-during-us-elections.ipynb">[Parts of speech analysis]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0002-news-headlines-analysis-proportion-of-imperatives-PL.ipynb">[Headlines analysis]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0003-arXiv-AI-reaserch-papers-tweets-category-analysis.ipynb">[Tweets analysis]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0004-sentiment-analysis-APA-mentioning-tweets-textblob-sote.ipynb">[Sentiment analysis]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0005-text-analysis.ipynb">[Text analysis]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0006-sentiment-prediction.ipynb">[Sentiment prediction]</a></p>
+                <p><a href="https://github.com/Hiurge/100-Text-Models-Analysis-Challange-NLP-DL-ML-more/blob/master/0007-private-public-college-classification.ipynb">[Classification]</a>
+		</p>
+                <br>
+                <p><b>4. Web scrapper with depth</b></p>
+                <p>Web scrapper to collect all possible links within given web page with max_depth parameter to controll max link distance from the home page.</p>
+                <p><a href="https://github.com/Hiurge/web-crawler-with-depth">[code]</a>
+                </p>
+                <br>
+                <p><b>5. Topic modelling example</b></p>
+                <p>Collected articles on 18 psychology approaches using wikipedia to scrapp all connected articles. Extracted most common words, part of speech and their proportions. Result: text classificator predicting simmilarity to given psychology schools.</p>
+                <p>[app - tbd] <a href="https://github.com/Hiurge/eda-and-topic-modeling-on-wiki-psychology-texts">[code]</a>
+                </p>
+                <br>
+                <p><b>6. Emotion/state text recognition</b></p>
+                <p>Broadenign sentiment analysis by multiple sources of state/emotions classifications as Harvard corpus, word lists. Unfinished.</p>
+                <p><a href="https://github.com/Hiurge/nlp-text-generation-recognition">[code]</a></p>
+                <br>
+                <p><b>7. Chessboard calculator</b></p>
+                <p>Program computing and collecting propable chess figures combinations on chessboard of N fields and defined set of figures$
+                <p><a href="https://github.com/Hiurge/chess-moves-combinatorics">[code]</a>
+           	</p>
+	</div>
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+
+	<div class="posts_page">
+		<br>
+		<p>Blog page. TBD.</p>         
+		<br>
+        <br>
+	</div>
+
+	<div class="posts">
+		{% if page_nav %}
+			<div class="post">
+				{{page_nav|safe}} 
+				<br>
+			</div>
+		{% endif %}
+	</div>
+
+	<div class="posts">
+	<hr>
+	{% if posts_intros %}
+		
+		{% for post_intro in posts_intros %}
+		
+			<div class="post">
+				{{post_intro|safe}} 
+				<br>
+			</div>
+
+		{% endfor %}
+	{% endif %}
+	<hr>
+	</div>
+
+	<div class="posts">
+	{% if page_nav %}
+		<div class="post">
+			{{page_nav|safe}} 
+			<br>
+		</div>
+	{% endif %}
+	</div>
+
+
+
+{% endblock %}

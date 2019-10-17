@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class='create_content_page'>
+		<h1>Update content:</h1>
+
+
+	    <div class=update_form>
+	        <form  action="" method="post" role="form">
+	            <style> 
+				  textarea {
+				  width: 100%;
+				  height: 500px;
+				  padding: 12px 20px;
+				  box-sizing: border-box;
+				  border: 2px solid #ccc;
+				  border-radius: 4px;
+				  background-color: #f8f8f8;
+				  font-size: 16px;
+				  resize: none;
+				  }
+			    </style>
+	        	{{ UAF.csrf }}
+	         	<p>{{UAF.title_field}}</p>
+	         	<p>{{UAF.category_field(size=25)}} {{UAF.tags_field(size=25)}}</p>
+	         	<p></p>
+	            <textarea name="body_field" class="form-control" id="body_field" placeholder="article">{{UAF.body_field.default}}</textarea>
+	            <p>{{UAF.submit_button(size=25)}}{{UAF.login}}{{UAF.password}}</p>
+	            <p>{{UAF.delete_button(size=15)}}</p>
+	      	  </p>
+	        </form>
+	        <hr>
+	    </div>
+
+
+
+	      {% with messages = get_flashed_messages(with_categories=true) %}
+	          {% if messages %}
+	              <br>
+	              <p> </p>
+	              {% for message in messages %}
+	                  <div class="alert alert-info">
+	                  <strong>Done: </strong> {{ message[1] }}
+	                  </div>
+	              {% endfor %}
+	          {% endif %}
+	      {% endwith %}
+		
+
+
+	</div class='create_content_page'>
+
+{% endblock %}
