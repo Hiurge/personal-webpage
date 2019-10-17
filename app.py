@@ -8,14 +8,13 @@ import datetime
 import os
 
 from app_scripts.DB_manager import PortfolioPageDB
-from app_scripts.DB_manager.content_helpers import post_intro_html, proj_intro_html, article_to_html, project_to_html, create_page_nav
+from app_scripts.content_helpers import post_intro_html, proj_intro_html, article_to_html, project_to_html, create_page_nav
+
 
 
 app = Flask(__name__)
-app.config.from_object(__name__)
+app.config.from_object(__name__) 
 app.config['SECRET_KEY'] = 'SjdnUends821Jsdlkvxh391ksdODnejdD2'
-
-# https://teamtreehouse.com/community/how-to-add-comments-to-post-in-flask-application
 
 
 
@@ -28,10 +27,10 @@ def home_page():
 	project_intros = DB.get_projects()
 
 	display_N_articles = 3
-	posts_intros_html = [post_intro_html(p, 150) for p in articles[:display_N_articles]]
+	posts_intros_html = [post_intro_html(p, intro_body_size=150) for p in articles[:display_N_articles]]
 
 	display_N_projects = 3
-	project_intros_html = [proj_intro_html(p, 150) for p in project_intros[:display_N_projects]]
+	project_intros_html = [proj_intro_html(p, intro_body_size=150) for p in project_intros[:display_N_projects]]
 
 	return render_template('home.html', posts_intros=posts_intros_html, project_intros=project_intros_html) 
 
